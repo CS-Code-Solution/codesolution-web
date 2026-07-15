@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-cyan: var(--cyan);
+  --color-brand-light: var(--brand-light);
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  color-scheme: light;
+
+  /* Brand palette */
+  --navy: #071a2f; /* Azul-marinho profundo */
+  --navy-foreground: #ffffff;
+  --brand-blue: #0b5ed7; /* Azul tecnológico */
+  --cyan: #20b8e6; /* Azul-ciano */
+  --brand-light: #dff5fc; /* Azul-claro para detalhes */
+
+  --background: #ffffff;
+  --foreground: #182230; /* Grafite textos principais */
+  --card: #ffffff;
+  --card-foreground: #182230;
+  --popover: #ffffff;
+  --popover-foreground: #182230;
+  --primary: #0b5ed7; /* Azul tecnológico */
+  --primary-foreground: #ffffff;
+  --secondary: #f5f7fa; /* Cinza muito claro */
+  --secondary-foreground: #182230;
+  --muted: #f5f7fa;
+  --muted-foreground: #667085; /* Cinza textos secundários */
+  --accent: #dff5fc;
+  --accent-foreground: #071a2f;
+  --destructive: #dc2626;
+  --border: #e5eaf1;
+  --input: #e5eaf1;
+  --ring: #0b5ed7;
+
+  --radius: 0.875rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+}
+
+@utility text-gradient {
+  background: linear-gradient(90deg, var(--brand-blue), var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
